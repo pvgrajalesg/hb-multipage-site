@@ -1,19 +1,19 @@
 {
   "mainNav": {
     "logo": {
-      "img": "que mas",
-      "link": ""
+      "img": "./../../assets/logo.png",
+      "link": "hola"
     },
     "links": [
       {
-        "label": "",
+        "label": "Telefono",
         "href": ""
       },
       {
-        "label": "",
+        "label": "Internet",
         "links": [
           {
-            "label": "",
+            "label": "SmartWifi",
             "href": ""
           }
         ]

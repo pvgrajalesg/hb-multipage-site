@@ -1,20 +1,26 @@
 const merge = require('webpack-merge')
 const common = require('./webpack.common.js')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = merge(common, {
-   devtool: 'inline-source-map',
-   devServer: {
-     contentBase: './public'
-   },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './public'
+  },
 
-   module: {
+  module: {
     rules: [
       {
         test: /\s[a|c]ss$/,
         exclude: /node_modules/,
         loader: 'sasslint'
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader'
+          }
+        ]
       },
       {
         // set up standard-loader as a preloader
@@ -33,5 +39,4 @@ module.exports = merge(common, {
       }
     ]
   }
-
- })
+})

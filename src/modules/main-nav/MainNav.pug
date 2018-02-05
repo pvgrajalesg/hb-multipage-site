@@ -1,4 +1,5 @@
-.prueba
-	p #{logo.img}
-	p hola
+.main-nav
+	img.logo(src=require('./../../assets/logo.png'))
+	each val in links
+		button= val.label
 
