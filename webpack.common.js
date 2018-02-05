@@ -7,20 +7,20 @@ module.exports = {
   entry: {
     app: './src/index.js'
   },
-    output: {
-      filename: 'index.bundle.js',
-      path: path.resolve(__dirname, 'public')
-    },
+  output: {
+    filename: 'index.bundle.js',
+    path: path.resolve(__dirname, 'public')
+  },
 
-    module: {
+  module: {
     rules: [
       {
         test: /\.(s*)css$/,
         use: ExtractTextPlugin.extract({
-        	use:[
-        	  { loader: 'css-loader', options: { minimize: true }},
-        	  { loader: 'sass-loader?sourceMap'}
-        	]
+          use: [
+            {loader: 'css-loader', options: { minimize: true }},
+            {loader: 'sass-loader?sourceMap'}
+          ]
         })
       },
       {
@@ -28,6 +28,7 @@ module.exports = {
         use: ['pug-loader']
       },
       {
+        enforce: 'pre',
         test: /\s[a|c]ss$/,
         exclude: /node_modules/,
         loader: 'sasslint'
@@ -35,14 +36,14 @@ module.exports = {
     ]
   },
 
-    plugins: [
+  plugins: [
     new ExtractTextPlugin({ // define where to save the file
       filename: './bundle.css'
     }),
     new CleanWebpackPlugin(['public']),
     new HtmlWebpackPlugin({
-    	template: './src/index.pug',
-        title: 'Production'
-      })
+      template: './src/index.pug',
+      title: 'Production'
+    })
   ]
-  }
+}
