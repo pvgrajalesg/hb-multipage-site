@@ -1,0 +1,23 @@
+{
+    "mainNav": {
+      "logo": {
+        "img": "./../../assets/logo.png",
+        "link": "hola"
+      },
+      "links": [
+        {
+          "label": "Telefono",
+          "href": ""
+        },
+        {
+          "label": "Internet",
+          "links": [
+            {
+              "label": "SmartWifi",
+              "href": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
