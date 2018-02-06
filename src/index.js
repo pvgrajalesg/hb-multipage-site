@@ -1,4 +1,3 @@
-import './index.pug'
 import './index.scss'
 import MainNav from './modules/main-nav/MainNav.js'
 
