@@ -23,6 +23,12 @@ module.exports = {
         test: /\s[a|c]ss$/,
         exclude: /node_modules/,
         loader: 'sasslint'
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [{
+          loader: 'file-loader'
+        }]
       }
     ]
   },

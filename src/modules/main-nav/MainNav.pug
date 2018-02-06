@@ -1,5 +1,16 @@
 .main-nav
-	img.logo(src=require('./../../assets/logo.png'))
-	each val in links
-		button= val.label
+	.main-nav-container
+		.main-nav-container__button
+			button
+				span
+				span
+		.main-nav-container__logo
+			img.logo(src=require('./../../assets/logo.png'))
+	.main-nav-menu
+		each val in links
+			button= val.label
+.landing
+	header
+		button(trigger)
+			span(line)
 
