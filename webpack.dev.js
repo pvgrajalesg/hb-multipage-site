@@ -18,6 +18,15 @@ module.exports = merge(common, {
           error: false,
           snazzy: true
         }
+      },
+      { test: /\.scss$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'sass-loader'
+        }]
       }
     ]
   }

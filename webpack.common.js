@@ -15,15 +15,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(s*)css$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            {loader: 'css-loader', options: { minimize: true }},
-            {loader: 'sass-loader?sourceMap'}
-          ]
-        })
-      },
-      {
         test: /\.pug/,
         use: ['pug-loader']
       },
