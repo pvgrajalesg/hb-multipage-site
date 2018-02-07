@@ -1,16 +1,25 @@
 .main-nav
 	.main-nav-container
 		.main-nav-container__button
-			button
-				span
-				span
+			button.button
+				span.button-line
 		.main-nav-container__logo
-			img.logo(src=require('./../../assets/logo.png'))
-	.main-nav-menu
-		each val in links
-			button= val.label
-.landing
-	header
-		button(trigger)
-			span(line)
+			a(href=logo.link)
+				img.logo(src=require('./../../assets/logo.png'))
+	.container
+		.main-nav-menu
+			each val in links
+				.main-nav-menu__item
+					//button= val.label
+					if val.links != undefined
+						select
+							option(value= val.label, selected= true) Home
+								each item in val.links
+									option(value= item.label) hola
+								//button= item.label
+					else
+						a(href=val.href)
+							button= val.label	
+		.article
+	
 

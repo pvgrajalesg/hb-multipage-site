@@ -1,14 +1,180 @@
-.main{
-	width: 100%;
+.main-nav{
+	width: 100vw;
 	height: 100vh;
-	position: absolute;
+}
 
-	.landing {
+.main-nav-container{
+	width: 100%;
+	height: 20%;
+	background-color: white;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+
+	&__button{
+		display: flex;
+		align-items: center;
+		width: 20%;
+		height: 100%;
+		padding: 0 20px;
+	}
+
+	.button {
+		display: block;
+		width: 40px;
+		height: 40px;
+		border-radius: 2px;
+		background: darken(white, 5%);
+		border: 1px solid darken(green, 15%);
+
+		&-line {
+			display: block;
+			height: 2px;
+			width: 100%;
+			background: black;
+			//transition: transform $animation-timing;
+		
+			&::before,
+			&::after {
+				display: block;
+				content: '';
+				height: 2px;
+				width: 100%;
+				background: black;
+				position: relative;
+				//transition: transform $animation-timing;
+			}
+		
+			&::before {
+				top: -6px;
+			}
+		
+			&::after {
+				bottom: -4px;
+			}
+		}	
+	}
+
+	.main-nav-container__logo{
+		width: 80%;
+		height: 100%;
+
+		.logo{
+			width: 20vh;
+			height: 90%;
+		}
+	}
+
+}
+
+.container{
+	position: relative;
+	width: 100%;
+	height: 80%;
+
+	.main-nav-menu{
+		position: absolute;
+		background-color: green;
+		width: 100%;
+		height: 100%;
+
+		&__item{
+			width: 100%;
+			height: 40px;
+			border: 1px solid darken(black, 15%);
+		}
+
+		&--opened{
+			z-index: 1;
+		}
+	}
+
+	.article{
+		position: absolute;
+		background-color: blue;
+		width: 100%;
+		height: 100%;
+
+	}
+
+}
+
+$shadow: hsla(0, 0%, 0%, .2);
+$item-background: white;
+$bgcolor: hsl(0, 79%, 60%);
+
+// settings
+$width: 300px;
+$height: 50px;
+
+body {
+  background-color: $bgcolor;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+
+.dropdown {
+  width: $width+30px;
+  height: $height;
+  margin: 40px auto;
+  perspective: 1000px;
+  box-shadow: 0 5px 10px $shadow;
+}
+
+.dropped {
+  height: $height * 4;
+}
+
+.item {
+  width: $width;
+  height: $height;
+  line-height: $height;
+  box-shadow: 0 2px 5px $shadow;
+  margin: 0 0;
+  padding: 0 20px;
+  background-color: $item-background;
+  transition: transform .15s linear;
+  cursor: pointer;
+  user-select: none;
+  
+  &:last-child {
+    transform: translate3d(0, -($height * 3), 0)
+  }
+  &:not(:last-child) {
+    transform: translate3d(0, $height, 0);
+  }
+  &:hover {
+    &:not(:last-child) {
+      background-color: darken(white, 2%);
+    }
+  }
+}
+
+.collapse {  
+  &:hover {
+    &:last-child {
+      transform-origin: 50% 100%;
+      transform: translate3d(0, -(($height+8px) * 3), 0) 
+                 rotateX(30deg)
+                 scale(1.10);
+    }
+  }
+}	
+
+/*.main{
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+
+	.main-nav-container__button {
 		width: 100%;
 		height: 100%;
 		background: green;
-		transform: translate(100%);
-		position: relative;
+		transform: translate(0);
+		//transition: transform $animation-timing $motion-curve;
+		
+		.menu-opened-js & {
+			transform: translate(100%);
+		}
 		
 		header {
 			display: flex;
@@ -16,49 +182,64 @@
 			height: 60px;
 			background: darken(green, 10%);
 			padding: 0 20px;
-			
-			.trigger {
-				display: block;
-				width: 40px;
-				height: 40px;
-				border-radius: 2px;
-				background: darken(green, 5%);
-				border: 1px solid darken(green, 15%);
-			}
-			
-			.line {
-				display: block;
-				height: 2px;
-				width: 100%;
-				background: white;
-			
-				&::before,
-				&::after {
-					display: block;
-					content: '';
-					height: 2px;
-					width: 100%;
-					background: white;
-					position: absolute;
-				}
-			
-				&::before {
-					top: -6px;
-				}
-			
-				&::after {
-					bottom: -4px;
-				}
-			}
+		}
+	}
+
+	.trigger {
+		display: block;
+		width: 40px;
+		height: 40px;
+		border-radius: 2px;
+		background: darken(green, 5%);
+		border: 1px solid darken(green, 15%);
+	}
+	
+	 .line {
+		display: block;
+		height: 2px;
+		width: 100%;
+		background: white;
+		//transition: transform $animation-timing;
+	
+		&::before,
+		&::after {
+			display: block;
+			content: '';
+			height: 2px;
+			width: 100%;
+			background: white;
+			position: relative;
+			//transition: transform $animation-timing;
+		}
+	
+		&::before {
+			top: -6px;
+		}
+	
+		&::after {
+			bottom: -4px;
+		}
+	
+		.menu-opened-js &::before {
+			transform: rotate(-29deg) scale(0.5, 1) translateX(-15px);
+		}
+	
+		.menu-opened-js &::after {
+			transform: rotate(29deg) scale(0.5, 1) translateX(-15px);
+		}
+	
+		.menu-opened-js & {
+			transform: scale(0.6, 1)
 		}
 	}
 
 	&-nav{
-		transform: translateX(0);
+		//transform: translateX(0);
 		width: 100%;
 		height: 100%;
-		position: relative;
+		position: absolute;
 		background-color: yellow;
+		//z-index: 1;
 
 		&-container{
 			display: flex;
@@ -79,9 +260,8 @@
 	}
 }
 
-.logo{
-	width: 20vh;
-	height: 100%;
-}
+.menu-opened{
+	z-index: 1;
+}*/
 
 

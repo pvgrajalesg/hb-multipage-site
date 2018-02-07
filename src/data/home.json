@@ -2,7 +2,7 @@
   "mainNav": {
     "logo": {
       "img": "./../../assets/logo.png",
-      "link": "hola"
+      "link": "index.html"
     },
     "links": [
       {
