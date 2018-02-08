@@ -12,16 +12,12 @@ export default class MainNav {
   eventButtonMenu () {
     const buttonMenu = this.node.querySelector('.button-closed')
     const mainNav = this.node.querySelector('.main-nav-menu')
-    const buttonCross = this.node.querySelector('.button-opened')
+    const buttonCross = this.node.querySelector('.button-closed-line')
     console.log(mainNav)
     buttonMenu.addEventListener('click', function () {
       mainNav.classList.toggle('main-nav-menu--opened')
-      buttonCross.classList.toggle('button-opened--js')
-    })
-
-    buttonCross.addEventListener('click', function () {
-      mainNav.classList.toggle('main-nav-menu--opened')
-      buttonCross.classList.toggle('button-opened--js')
+      buttonCross.classList.toggle('button-closed-line')
+      buttonCross.classList.toggle('button-closed-cross')
     })
   }
 }
