@@ -3,6 +3,45 @@
 	height: 100vh;
 }
 
+
+.button-opened {
+	display: block;
+	width: 40px;
+	height: 40px;
+	border-radius: 2px;
+	background: darken(white, 5%);
+	border: 1px solid darken(green, 15%);
+	position: absolute;
+	&--js{
+		z-index: 2;
+	}
+
+	&-cross{
+		position: relative;
+  		display: inline-block;
+  		width: 30px;
+  		height: 30px;
+  		overflow: hidden;
+
+  		&::before, &::after {
+    		content: '';
+    		position: absolute;
+    		height: 2px;
+    		width: 100%;
+    		top: 50%;
+    		left: 0;
+    		margin-top: -2px;
+    		background: #000;
+  		}
+  		&::before {
+    		transform:rotate(45deg);
+  		}
+  		&::after {
+    		transform:rotate(-45deg);
+  		}
+	}
+}
+
 .main-nav-container{
 	width: 100%;
 	height: 20%;
@@ -17,22 +56,27 @@
 		width: 20%;
 		height: 100%;
 		padding: 0 20px;
+		position: relative;
 	}
 
-	.button {
+	.button-closed {
 		display: block;
 		width: 40px;
 		height: 40px;
 		border-radius: 2px;
 		background: darken(white, 5%);
 		border: 1px solid darken(green, 15%);
+		position: absolute;
+		z-index: 1;
+		
 
 		&-line {
 			display: block;
 			height: 2px;
 			width: 100%;
+			position:absolute;
 			background: black;
-			//transition: transform $animation-timing;
+			transition: z-index ease-in-out;
 		
 			&::before,
 			&::after {
@@ -42,7 +86,7 @@
 				width: 100%;
 				background: black;
 				position: relative;
-				//transition: transform $animation-timing;
+				transition: z-index ease-in-out;
 			}
 		
 			&::before {
@@ -98,170 +142,3 @@
 	}
 
 }
-
-$shadow: hsla(0, 0%, 0%, .2);
-$item-background: white;
-$bgcolor: hsl(0, 79%, 60%);
-
-// settings
-$width: 300px;
-$height: 50px;
-
-body {
-  background-color: $bgcolor;
-  font-family: 'Source Sans Pro', Arial, sans-serif;
-}
-
-.dropdown {
-  width: $width+30px;
-  height: $height;
-  margin: 40px auto;
-  perspective: 1000px;
-  box-shadow: 0 5px 10px $shadow;
-}
-
-.dropped {
-  height: $height * 4;
-}
-
-.item {
-  width: $width;
-  height: $height;
-  line-height: $height;
-  box-shadow: 0 2px 5px $shadow;
-  margin: 0 0;
-  padding: 0 20px;
-  background-color: $item-background;
-  transition: transform .15s linear;
-  cursor: pointer;
-  user-select: none;
-  
-  &:last-child {
-    transform: translate3d(0, -($height * 3), 0)
-  }
-  &:not(:last-child) {
-    transform: translate3d(0, $height, 0);
-  }
-  &:hover {
-    &:not(:last-child) {
-      background-color: darken(white, 2%);
-    }
-  }
-}
-
-.collapse {  
-  &:hover {
-    &:last-child {
-      transform-origin: 50% 100%;
-      transform: translate3d(0, -(($height+8px) * 3), 0) 
-                 rotateX(30deg)
-                 scale(1.10);
-    }
-  }
-}	
-
-/*.main{
-	width: 100vw;
-	height: 100vh;
-	position: relative;
-
-	.main-nav-container__button {
-		width: 100%;
-		height: 100%;
-		background: green;
-		transform: translate(0);
-		//transition: transform $animation-timing $motion-curve;
-		
-		.menu-opened-js & {
-			transform: translate(100%);
-		}
-		
-		header {
-			display: flex;
-			align-items: center;
-			height: 60px;
-			background: darken(green, 10%);
-			padding: 0 20px;
-		}
-	}
-
-	.trigger {
-		display: block;
-		width: 40px;
-		height: 40px;
-		border-radius: 2px;
-		background: darken(green, 5%);
-		border: 1px solid darken(green, 15%);
-	}
-	
-	 .line {
-		display: block;
-		height: 2px;
-		width: 100%;
-		background: white;
-		//transition: transform $animation-timing;
-	
-		&::before,
-		&::after {
-			display: block;
-			content: '';
-			height: 2px;
-			width: 100%;
-			background: white;
-			position: relative;
-			//transition: transform $animation-timing;
-		}
-	
-		&::before {
-			top: -6px;
-		}
-	
-		&::after {
-			bottom: -4px;
-		}
-	
-		.menu-opened-js &::before {
-			transform: rotate(-29deg) scale(0.5, 1) translateX(-15px);
-		}
-	
-		.menu-opened-js &::after {
-			transform: rotate(29deg) scale(0.5, 1) translateX(-15px);
-		}
-	
-		.menu-opened-js & {
-			transform: scale(0.6, 1)
-		}
-	}
-
-	&-nav{
-		//transform: translateX(0);
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		background-color: yellow;
-		//z-index: 1;
-
-		&-container{
-			display: flex;
-			justify-content: center;
-			align-content: center;
-			flex-direction: row;
-			width: 100%;
-			height: 150px;
-			background-color:white;
-
-			&__button{
-				background-color: black;
-				width: 10vh;
-				height: 100%;
-			}
-			
-		}
-	}
-}
-
-.menu-opened{
-	z-index: 1;
-}*/
-
-
