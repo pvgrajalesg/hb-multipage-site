@@ -124,3 +124,41 @@
 	}
 
 }
+ 
+button{
+	background:none;
+  border:none;
+  font-size:1em;
+  color: black;
+}
+.main-nav-menu__item{
+	display: inline-block;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.dropdown-button{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.dropdown-arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #000;
+}
+ 
+.dropdown-menu {
+	width: 100%;
+	display: block;
+	text-align: center;
+	visibility: hidden;
+}
+ 
+.dropdown-opened a {
+	display: block;
+	visibility: visible;
+}

@@ -7,6 +7,7 @@ export default class MainNav {
     this.node = node
     this.node.innerHTML = template(mainNav)
     this.eventButtonMenu()
+    this.eventOptionMenu()
   }
 
   eventButtonMenu () {
@@ -18,6 +19,15 @@ export default class MainNav {
       mainNav.classList.toggle('main-nav-menu--opened')
       buttonCross.classList.toggle('button-closed-line')
       buttonCross.classList.toggle('button-closed-cross')
+    })
+  }
+
+  eventOptionMenu () {
+    const dropdown = document.querySelector('.dropdown-button')
+    const dropdownMenu = document.querySelector('.dropdown-menu')
+
+    dropdown.addEventListener('click', function () {
+      dropdownMenu.classList.toggle('dropdown-opened')
     })
   }
 }
