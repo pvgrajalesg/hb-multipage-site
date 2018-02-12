@@ -23,11 +23,14 @@ export default class MainNav {
   }
 
   eventOptionMenu () {
-    const dropdown = document.querySelector('.dropdown-button')
-    const dropdownMenu = document.querySelector('.dropdown-menu')
+    const mainNav = this.node.querySelector('.main-nav-menu')
+    mainNav.addEventListener('click', this.show.bind(this))
+  }
 
-    dropdown.addEventListener('click', function () {
-      dropdownMenu.classList.toggle('dropdown-opened')
-    })
+  show(event){
+    if (event.target.parentElement.className === 'item-dropdown__button') {
+      const dropdownMenu = event.target.parentElement.parentElement.parentElement.querySelector('.item-dropdown__menu')
+      dropdownMenu.classList.toggle('item-dropdown--opened')
+    }
   }
 }

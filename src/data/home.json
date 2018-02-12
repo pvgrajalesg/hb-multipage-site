@@ -31,18 +31,18 @@
         "href": ""
       },
       {
-        "label": "Internet",
+        "label": "Tv",
         "links": [
           {
-            "label": "SmartWifi1",
+            "label": "TV1",
             "href": ""
           },
           {
-            "label": "SmartWifi2",
+            "label": "TV2",
             "href": ""
           },
           {
-            "label": "SmartWifi3",
+            "label": "TV3",
             "href": ""
           }
         ]

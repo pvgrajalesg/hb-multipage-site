@@ -10,13 +10,12 @@
 		ul.main-nav-menu
 			each val in links
 				li.main-nav-menu__item
-					//button= val.label
 					if val.links != undefined
-						div.dropdown-button
-							a.dropdown-btn(href='#')
+						div.item-dropdown
+							a.item-dropdown__button(href='#')
 								button= val.label
-							span.dropdown-arrow
-						div.dropdown-menu
+							span.item-dropdown__arrow
+						div.item-dropdown__menu
 							each item in val.links
 								a(href=item.href)
 									button= item.label

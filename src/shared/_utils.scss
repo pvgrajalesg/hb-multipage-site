@@ -1,11 +1,11 @@
-@mixin small-screen{
-	@media (max-width:$small-screen){
+@mixin large-screen{
+	@media (min-width:$large-screen){
     	@content;
 	}
 }
 
 @mixin medium-screen{
-	@media (max-width:$medium-screen){
+	@media (min-width:$medium-screen){
     	@content;
 	}
 }
