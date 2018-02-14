@@ -17,7 +17,7 @@ export default class MainNav {
     buttonMenu.addEventListener('click', function () {
       mainNav.classList.toggle('main-nav-menu__list--opened')
       buttonCross.classList.toggle('main-nav-container__button-closed--line')
-      buttonCross.classList.toggle('main-nav-container__button-closed--line')
+      buttonCross.classList.toggle('main-nav-container__button-closed--cross')
     })
   }
 
