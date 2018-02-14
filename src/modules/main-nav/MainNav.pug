@@ -1,27 +1,26 @@
 .main-nav
 	.main-nav-container
 		.main-nav-container__button
-			button.button-closed
-				span.button-closed-line
+			button.main-nav-container__button-closed
+				span.main-nav-container__button-closed--line
 		.main-nav-container__logo
 			a(href=logo.link)
-				img.logo(src=require('./../../assets/logo.png'))
-	.container
-		ul.main-nav-menu
+				img.logo(src= logo.img)
+	.main-nav-menu
+		ul.main-nav-menu__list
 			each val in links
-				li.main-nav-menu__item
+				li.main-nav-menu__list__item
 					if val.links != undefined
-						div.item-dropdown
-							a.item-dropdown__button(href='#')
-								button= val.label
-							span.item-dropdown__arrow
-						div.item-dropdown__menu
+						div.main-nav-menu__list__item-dropdown
+							a.main-nav-menu__list__item-dropdown__button(href='#')
+								button(class='main-nav-menu__list__item-button')= val.label
+							span.main-nav-menu__list__item-dropdown__arrow
+						div.main-nav-menu__list__item-menu
 							each item in val.links
 								a(href=item.href)
-									button= item.label
+									button(class='main-nav-menu__list__item-button')= item.label
 					else
 						a(href=val.href)
-							button= val.label	
-		.article
+							button(class='main-nav-menu__list__item-button')= val.label	
 	
 

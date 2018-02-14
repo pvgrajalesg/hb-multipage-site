@@ -25,9 +25,8 @@
 		@include large-screen{
 			display: none;
 		}
-	}
 
-	.button-closed {
+		&-closed {
 		display: block;
 		width: 40px;
 		height: 40px;
@@ -35,7 +34,7 @@
 		background: darken(white, 5%);
 		border: 1px solid darken(green, 15%);
 
-		&-line {
+		&--line {
 			display: block;
 			height: 2px;
 			width: 100%;
@@ -60,7 +59,7 @@
 			}
 		}
 
-		&-cross{
+		&--cross{
 			position: relative;
   			display: inline-block;
   			width: 30px;
@@ -87,8 +86,9 @@
   			}
 		}	
 	}
+	}
 
-	.main-nav-container__logo{
+	&__logo{
 		width: 80%;
 		height: 100%;
 
@@ -100,7 +100,7 @@
 
 }
 
-.container{
+.main-nav-menu{
 	position: relative;
 	width: 100%;
 	height: 80%;
@@ -112,11 +112,12 @@
 		justify-content: center;
 	}
 
-	.main-nav-menu{
+	.main-nav-menu__list{
 		position: absolute;
 		background-color: green;
 		width: 100%;
 		height: 100%;
+		visibility: hidden;
 
 		&__item{
 			width: 100%;
@@ -134,7 +135,7 @@
 		}
 
 		&--opened{
-			z-index: 1;
+			visibility: visible;
 		}
 
 		@include large-screen{
@@ -149,27 +150,23 @@
 
 	}
 
-	.article{
-		position: absolute;
-		background-color: blue;
-		width: 100%;
-		height: 100%;
-
-		@include large-screen{
-			position: relative;
-		}
-	}
-
 }
  
-button{
+.main-nav-menu__list__item-button{
 	background:none;
 	border:none;
 	font-size:1em;
 	color: black;
 }
 
-.item-dropdown{
+.main-nav-menu__list__item-menu {
+	width: 100%;
+	display: block;
+	text-align: center;
+	visibility: hidden;
+}
+
+.main-nav-menu__list__item-dropdown{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
@@ -179,13 +176,6 @@ button{
 		border-left: 5px solid transparent;
 		border-right: 5px solid transparent;
 		border-top: 5px solid #000;
-	}
-
-	&__menu {
-		width: 100%;
-		display: block;
-		text-align: center;
-		visibility: hidden;
 	}
 
 	&--opened a {
