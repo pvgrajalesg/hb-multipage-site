@@ -1,7 +1,7 @@
 {
   "mainNav": {
     "logo": {
-      "img": "./../../assets/logo.png",
+      "img": "./assets/logo.png",
       "link": "index.html"
     },
     "links": [
