@@ -1,2 +1,26 @@
 .main-nav
-  p welcome
+	.main-nav-container
+		.main-nav-container__button
+			button.main-nav-container__button-closed
+				span.main-nav-container__button-closed--line
+		.main-nav-container__logo
+			a(href=logo.link)
+				img.logo(src!= logo.img)
+	.main-nav-menu
+		ul.main-nav-menu__list
+			each val in links
+				li.main-nav-menu__list__item
+					if val.links != undefined
+						div.main-nav-menu__list__item-dropdown
+							a.main-nav-menu__list__item-dropdown__button(href='#')
+								button(class='main-nav-menu__list__item-button')= val.label
+							span.main-nav-menu__list__item-dropdown__arrow
+						div.main-nav-menu__list__item-menu
+							each item in val.links
+								a(href=item.href)
+									button(class='main-nav-menu__list__item-button')= item.label
+					else
+						a(href=val.href)
+							button(class='main-nav-menu__list__item-button')= val.label
+	
+

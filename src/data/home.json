@@ -1,23 +1,52 @@
 {
-    "mainNav": {
-      "logo": {
-        "img": "./../../assets/logo.png",
-        "link": "hola"
+  "mainNav": {
+    "logo": {
+      "img": "./assets/logo.png",
+      "link": "index.html"
+    },
+    "links": [
+      {
+        "label": "Telefono",
+        "href": ""
       },
-      "links": [
-        {
-          "label": "Telefono",
-          "href": ""
-        },
-        {
-          "label": "Internet",
-          "links": [
-            {
-              "label": "SmartWifi",
-              "href": ""
-            }
-          ]
-        }
-      ]
-    }
+      {
+        "label": "Internet",
+        "links": [
+          {
+            "label": "SmartWifi1",
+            "href": ""
+          },
+          {
+            "label": "SmartWifi2",
+            "href": ""
+          },
+          {
+            "label": "SmartWifi3",
+            "href": ""
+          }
+        ]
+      },
+      {
+        "label": "celular",
+        "href": ""
+      },
+      {
+        "label": "Tv",
+        "links": [
+          {
+            "label": "TV1",
+            "href": ""
+          },
+          {
+            "label": "TV2",
+            "href": ""
+          },
+          {
+            "label": "TV3",
+            "href": ""
+          }
+        ]
+      }
+    ]
   }
+}
