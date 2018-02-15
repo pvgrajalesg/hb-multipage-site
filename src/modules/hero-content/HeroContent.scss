@@ -1,0 +1,28 @@
+.hero-content{
+	width: 1500px;
+	height: 400px;
+	
+	&__image{
+		position: absolute;
+		opacity: 0.6;
+	}
+
+	&__cta{
+		position: relative;
+		
+		&-button{
+			background: #3498db;
+  		border-radius: 28px;
+  		font-family: Arial;
+  		color: #ffffff;
+  		font-size: 16px;
+  		padding: 10px 20px 10px 20px;
+			text-decoration: none;
+			&:hover{
+				background: #3cb0fd;
+  			text-decoration: none;
+			}
+		}
+	}
+	
+}
