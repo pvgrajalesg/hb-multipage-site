@@ -9,12 +9,13 @@
 	width: 100%;
 	height: 50%;
 }
+
 .main-nav-container{
 	width: 100%;
-	height: 50%;
+	height: 100%;
 	background-color: white;
 	display: flex;
-	align-content: center;
+	align-items: center;
 	justify-content: center;
 
 	&__button{
@@ -30,65 +31,65 @@
 		}
 
 		&-closed {
-		display: block;
-		width: 40px;
-		height: 40px;
-		border-radius: 2px;
-		background: darken(white, 5%);
-		border: 1px solid darken(green, 15%);
-
-		&--line {
 			display: block;
-			height: 2px;
-			width: 100%;
-			background: black;		
-		
-			&::before,
-			&::after {
+			width: 40px;
+			height: 40px;
+			border-radius: 2px;
+			background: darken(white, 5%);
+			border: 1px solid darken(green, 15%);
+
+			&--line {
 				display: block;
-				content: '';
 				height: 2px;
 				width: 100%;
-				background: black;
+				background: black;		
+		
+				&::before,
+				&::after {
+					display: block;
+					content: '';
+					height: 2px;
+					width: 100%;
+					background: black;
+					position: relative;
+				}
+		
+				&::before {
+					top: -6px;
+				}
+		
+				&::after {
+					bottom: -4px;
+				}
+			}
+
+			&--cross{
 				position: relative;
-			}
-		
-			&::before {
-				top: -6px;
-			}
-		
-			&::after {
-				bottom: -4px;
-			}
-		}
+  				display: inline-block;
+  				width: 30px;
+  				height: 30px;
+  				overflow: hidden;
 
-		&--cross{
-			position: relative;
-  			display: inline-block;
-  			width: 30px;
-  			height: 30px;
-  			overflow: hidden;
+  				&::before, &::after {
+    				content: '';
+    				position: absolute;
+    				height: 2px;
+    				width: 100%;
+    				top: 50%;
+    				left: 0;
+    				margin-top: -2px;
+    				background: #000;
+  				}
 
-  			&::before, &::after {
-    			content: '';
-    			position: absolute;
-    			height: 2px;
-    			width: 100%;
-    			top: 50%;
-    			left: 0;
-    			margin-top: -2px;
-    			background: #000;
-  			}
-
-  			&::before {
-    			transform:rotate(45deg);
-  			}
+  				&::before {
+    				transform:rotate(45deg);
+  				}
   			
-  			&::after {
-    			transform:rotate(-45deg);
-  			}
-		}	
-	}
+  				&::after {
+    				transform:rotate(-45deg);
+  				}
+			}	
+		}
 	}
 
 	&__logo{
@@ -96,7 +97,7 @@
 		height: 100%;
 
 		.logo{
-			width: 20vh;
+			width: 10%;
 			height: 100%;
 		}
 	}
@@ -105,7 +106,7 @@
 
 .main-nav-menu__list{
 	position: absolute;
-	background-color: green;
+	background-color: lighten(black, 30%);
 	width: 100%;
 	height: 100%;
 	visibility: hidden;
@@ -117,9 +118,9 @@
 		display: inline-block;
 		text-align: center;
 		align-items: center;
+		margin-top: 10px;
 
 		@include large-screen{
-			border: none;
 			z-index: 1;
 		}
 
@@ -128,6 +129,7 @@
 	&--opened{
 		height: 100%;
 		visibility: visible;
+		z-index: 1;
 	}
 
 	@include large-screen{
@@ -145,7 +147,8 @@
 		background:none;
 		border:none;
 		font-size:1em;
-		color: black;
+		color: white;
+		font-family: 'Roboto', sans-serif;
 	}
 
 	&__item-menu {
@@ -156,8 +159,6 @@
 	}
 
 }
- 
-
 
 .main-nav-menu__list__item-dropdown{
 	display: flex;

@@ -1,24 +1,22 @@
 {
-    "heroContent":{
-        "header": "",
-        "description": "",
-        "cta": {
-            "label": "",
-            "url": ""
+    "header": "",
+    "description": "Description hero content",
+    "cta": {
+        "label": "",
+        "url": ""
+    },
+    "images": {
+        "small": {
+            "url": "./assets/hero-small.jpg",
+            "description": "imagen for devices small"
         },
-        "images": {
-            "small": {
-                "url": "./assets/hero-small.jpeg",
-                "description": "imagen for devices small"
-            },
-            "medium": {
-                "url": "./assets/hero-medium.jpeg",
-                "description": "imagen for devices medium"
-            },
-            "large": {
-                "url": "./assets/hero-large.jpeg",
-                "description": "imagen for devices large"
-            }
+        "medium": {
+            "url": "./assets/hero-medium.jpg",
+            "description": "imagen for devices medium"
+        },
+        "large": {
+            "url": "./assets/hero-large.jpg",
+            "description": "imagen for devices large"
         }
     }
 }

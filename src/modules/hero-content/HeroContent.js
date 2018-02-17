@@ -1,6 +1,6 @@
 import template from './HeroContent.pug'
 import './HeroContent.scss'
-import { heroContent } from './../../data/heroContent.json'
+import heroContent from './../../data/heroContent.json'
 
 export default class MainNav {
   constructor (node) {
