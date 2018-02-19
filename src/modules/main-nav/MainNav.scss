@@ -1,7 +1,7 @@
  @import './../../shared/utils';
  @import './../../shared/variables';
 
- .main-nav{
+.main-nav{
 	width: 100vw;
 	height: 20%;
 }
@@ -149,6 +149,10 @@
 		font-size:1em;
 		color: white;
 		font-family: 'Roboto', sans-serif;
+
+		@include large-screen{
+			color: black;
+		}
 	}
 
 	&__item-menu {

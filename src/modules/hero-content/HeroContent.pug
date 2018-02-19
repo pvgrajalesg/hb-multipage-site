@@ -1,8 +1,8 @@
 picture
-    source(media="(max-width: 552px)" srcset=images.small.url)
-    source(media="(max-width: 1062px)" srcset=images.medium.url)
-    img(class="hero-content__image" src=images.medium.url width="1500" height="400" alt="Hero")
+    source(media="(max-width: 639px)" srcset=images.small.url)
+    source(media="(max-width: 1023px)" srcset=images.medium.url)
+    img(class="hero-content__image" src=images.large.url alt=images.large.description)
     span.hero-content__cta
         div.hero-content__cta-description #{description}
         a(href=cta.url)
-            button(class="hero-content__cta-button") Learn more
+            button(class="hero-content__cta-button") #{cta.label}
