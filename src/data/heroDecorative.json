@@ -1,0 +1,19 @@
+{
+    "header": "",
+    "description": "Description hero content",
+    "cta": {
+        "label": "",
+        "url": ""
+    },
+    "images": {
+        "small": {
+            "url": "./assets/hero-small.jpg"
+        },
+        "medium": {
+            "url": "./assets/hero-medium.jpg"
+        },
+        "large": {
+            "url": "./assets/hero-large.jpg"
+        }
+    }
+}

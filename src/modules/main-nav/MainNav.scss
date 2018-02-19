@@ -149,6 +149,10 @@
 		font-size:1em;
 		color: white;
 		font-family: 'Roboto', sans-serif;
+
+		@include large-screen{
+			color: black;
+		}
 	}
 
 	&__item-menu {
