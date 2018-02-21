@@ -10,7 +10,7 @@
 		position: absolute;
 		width: 100vw;
 		height: 400px;
-    	object-fit: cover;
+    object-fit: cover;
 	}
 
 	&__cta{
@@ -23,24 +23,24 @@
 		align-items: center;
 		
 		&-description{
-			color: white;
+			color: $letterColor;
 			font-size: 30px;
-			font-family: 'Abril Fatface', cursive;
+			font-family: $descriptionFont;
 		}
 
 		&-button{
-			background: #3498db;
-  			border-radius: 28px;
-  			font-family: Arial;
-  			color: #ffffff;
-  			font-size: 16px;
-  			padding: 10px 20px 10px 20px;
+			background: $buttonBackground;
+  		border-radius: 28px;
+  		font-family: $contentFont;
+  		color: $letterColor;
+  		font-size: 16px;
+  		padding: 10px 20px 10px 20px;
 			text-decoration: none;
 			margin-top: 10px;
 
 			&:hover{
-				background: #3cb0fd;
-  				text-decoration: none;
+				background: $buttonHover;
+  			text-decoration: none;
 			}
 		}
 	}
