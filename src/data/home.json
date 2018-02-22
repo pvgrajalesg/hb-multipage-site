@@ -1,24 +1,26 @@
 {
-  "header": "",
-  "description": "Description hero content",
-  "cta": {
-    "label": "Learn more",
-    "url": ""
-  },
-  "images": {
+  "heroContent":{
+    "header": "",
+    "description": "Description hero content",
+    "cta": {
+      "label": "Learn more",
+      "url": ""
+    },
+    "images": {
       "small": {
         "url": "./assets/hero-small.jpg",
         "description": "imagen for devices small"
       },
       "medium": {
-        "url": "./assets/hero-medium.jpg",
+        "url": "./assets/hero-medium1.jpg",
         "description": "imagen for devices medium"
       },
       "large": {
-        "url": "./assets/hero-large.jpg",
+        "url": "./assets/hero-large1.jpeg",
         "description": "imagen for devices large"
       }
-    },
+    }
+  },
 
   "mainNav": {
     "logo": {

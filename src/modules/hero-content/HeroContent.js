@@ -1,16 +1,13 @@
 import template from './HeroContent.pug'
 import './HeroContent.scss'
-import heroContent from './../../data/home.json'
+import {heroContent} from './../../data/home.json'
+import Breakpoint from '../../shared/breakpoint'
 
 export default class HeroContent {
   constructor (node) {
     this.node = node
-    this.dataHero()
-    console.log(heroContent)
-    this.node.innerHTML = template(heroContent)
-  }
-
-  dataHero () {
-    heroContent.push({'size': '639px'})
+    const contentHero = Object.assign(heroContent, Breakpoint.dataHero())
+    console.log(contentHero)
+    this.node.innerHTML = template(contentHero)
   }
 }

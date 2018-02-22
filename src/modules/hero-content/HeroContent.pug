@@ -1,8 +1,9 @@
-picture
-    source(media="(max-width: 639px)" srcset=images.small.url)
-    source(media="(max-width: 1023px)" srcset=images.medium.url)
-    img(class="hero-content__image" src=images.large.url alt=images.large.description)
-    span.hero-content__cta
-        div.hero-content__cta-description #{description}
-        a(href=cta.url)
-            button(class="hero-content__cta-button") #{cta.label}
+picture.hero-content-container
+    source(media= '(max-width: ' + breakpoint.small.maxWidth + ')' srcset=images.small.url)
+    source(media= '(min-width: ' + breakpoint.medium.minWidth + ') and (max-width: ' + breakpoint.medium.maxWidth + ')'  srcset=images.medium.url)
+    source(media= '(min-width: ' + breakpoint.large.minWidth + ')'  srcset=images.large.url)
+    img(class='hero-content-container__image' srcset=images.small.url alt=images.small.description)
+div.hero-content__cta
+    div.hero-content__cta-description #{description}
+    a(href=cta.url)
+        button(class='hero-content__cta-button') #{cta.label}
