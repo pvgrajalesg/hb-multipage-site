@@ -1,7 +1,10 @@
  @import './../../shared/utils';
  @import './../../shared/variables';
 
- .main-nav{
+$menuBackgroundColor: #ffffff;
+$menuMainColor: #000000;
+
+.main-nav{
 	width: 100vw;
 	height: 20%;
 }
@@ -13,7 +16,7 @@
 .main-nav-container{
 	width: 100%;
 	height: 100%;
-	background-color: white;
+	background-color: $menuBackgroundColor;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -35,14 +38,13 @@
 			width: 40px;
 			height: 40px;
 			border-radius: 2px;
-			background: darken(white, 5%);
-			border: 1px solid darken(green, 15%);
+			background: darken($menuBackgroundColor, 5%);
 
 			&--line {
 				display: block;
 				height: 2px;
 				width: 100%;
-				background: black;		
+				background: $menuMainColor;		
 		
 				&::before,
 				&::after {
@@ -50,7 +52,7 @@
 					content: '';
 					height: 2px;
 					width: 100%;
-					background: black;
+					background: $menuMainColor;
 					position: relative;
 				}
 		
@@ -65,29 +67,29 @@
 
 			&--cross{
 				position: relative;
-  				display: inline-block;
-  				width: 30px;
-  				height: 30px;
-  				overflow: hidden;
+  			display: inline-block;
+  			width: 30px;
+  			height: 30px;
+  			overflow: hidden;
 
-  				&::before, &::after {
-    				content: '';
-    				position: absolute;
-    				height: 2px;
-    				width: 100%;
-    				top: 50%;
-    				left: 0;
-    				margin-top: -2px;
-    				background: #000;
-  				}
+  			&::before, &::after {
+    			content: '';
+    			position: absolute;
+    			height: 2px;
+    			width: 100%;
+    			top: 50%;
+    			left: 0;
+    			margin-top: -2px;
+    			background: $menuMainColor;
+  			}
 
-  				&::before {
-    				transform:rotate(45deg);
-  				}
+  			&::before {
+    			transform:rotate(45deg);
+  			}
   			
-  				&::after {
-    				transform:rotate(-45deg);
-  				}
+  			&::after {
+    			transform:rotate(-45deg);
+  			}
 			}	
 		}
 	}
@@ -106,7 +108,7 @@
 
 .main-nav-menu__list{
 	position: absolute;
-	background-color: lighten(black, 30%);
+	background-color: lighten($menuMainColor, 30%);
 	width: 100%;
 	height: 100%;
 	visibility: hidden;
@@ -139,7 +141,7 @@
 		justify-content: center;
 		align-items: center;
 		height: 40px;	
-		background-color: white;
+		background-color: $menuBackgroundColor;
 		visibility: visible;
 	}
 
@@ -147,8 +149,8 @@
 		background:none;
 		border:none;
 		font-size:1em;
-		color: white;
-		font-family: 'Roboto', sans-serif;
+		color: $letterColor;
+		font-family: $contentFont;
 
 		@include large-screen{
 			color: black;
@@ -173,7 +175,7 @@
 	&__arrow {
 		border-left: 5px solid transparent;
 		border-right: 5px solid transparent;
-		border-top: 5px solid #000;
+		border-top: 5px solid $menuMainColor;
 	}
 
 	&--opened a {
@@ -181,7 +183,7 @@
 		visibility: visible;
 
 		@include large-screen{
-			background-color: #f5f5f5;
+			background-color: $menuBackgroundColor;
 			min-width: 160px;
 		}
 	}
