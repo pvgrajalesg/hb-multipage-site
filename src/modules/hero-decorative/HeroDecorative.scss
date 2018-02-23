@@ -1,15 +1,18 @@
 @import './../../shared/utils';
- @import './../../shared/variables';
+@import './../../shared/variables';
 
 .hero-decorative{
 	width: 100%;
 	height: 400px;
 	position: relative;
+	top: 20px;
 	
 	&__image{
 		position: absolute;
 		width: 100vw;
 		height: 400px;
+		background-repeat: no-repeat;
+		background-position: center;
 		background-size: cover;
 	}
 
@@ -25,21 +28,20 @@
 		&-description{
 			color: white;
 			font-size: 30px;
-			font-family: 'Abril Fatface', cursive;
+			font-family: $descriptionFont;
 		}
 
 		&-button{
-			background: #3498db;
+			background: $buttonBackground;
   			border-radius: 28px;
-  			font-family: Arial;
-  			color: #ffffff;
+  			font-family: $contentFont;
+  			color: $letterColor;
   			font-size: 16px;
   			padding: 10px 20px 10px 20px;
 			text-decoration: none;
-			margin-top: 10px;
 
 			&:hover{
-				background: #3cb0fd;
+				background: $buttonHover;
   				text-decoration: none;
 			}
 		}

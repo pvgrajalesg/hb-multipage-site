@@ -3,15 +3,15 @@ export default class Breakpoint {
     return ({
       'breakpoint': {
         'small': {
-          'maxWidth': '639px',
-          'minWidth': '320px'
+          'maxWidth': '639',
+          'minWidth': '320'
         },
         'medium': {
-          'maxWidth': '1023px',
-          'minWidth': '640px'
+          'maxWidth': '1023',
+          'minWidth': '640'
         },
         'large': {
-          'minWidth': '1024px'
+          'minWidth': '1024'
         }
       }
     })
