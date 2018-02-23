@@ -12,11 +12,11 @@
         "description": "imagen for devices small"
       },
       "medium": {
-        "url": "./assets/hero-medium1.jpg",
+        "url": "./assets/hero-medium.jpg",
         "description": "imagen for devices medium"
       },
       "large": {
-        "url": "./assets/hero-large1.jpeg",
+        "url": "./assets/hero-large.jpg",
         "description": "imagen for devices large"
       }
     }
