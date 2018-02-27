@@ -1,5 +1,5 @@
 export default class Breakpoint {
-  static dataHero () {
+  static dataBreakpoint () {
     return ({
       'breakpoint': {
         'small': {
