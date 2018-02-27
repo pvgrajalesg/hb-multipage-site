@@ -1,0 +1,52 @@
+ @import './../../shared/utils';
+ @import './../../shared/variables';
+
+.hero-content{
+	width: 100%;
+	height: 400px;
+	position: relative;
+	
+	&-container{
+		position: absolute;
+		width:100%;
+		height: 100%;
+		&__image{			
+			width: 100vw;
+			height: 400px;
+    	object-fit: cover;
+		}
+	}
+
+	&__cta{
+		position: absolute;
+		display: flex;
+		width:100%;
+		height: 100%;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		
+		&-description{
+			color: $letterColor;
+			font-size: 30px;
+			font-family: $descriptionFont;
+		}
+
+		&-button{
+			background: $buttonBackground;
+  		border-radius: 28px;
+  		font-family: $contentFont;
+  		color: $letterColor;
+  		font-size: 16px;
+  		padding: 10px 20px 10px 20px;
+			text-decoration: none;
+			margin-top: 10px;
+
+			&:hover{
+				background: $buttonHover;
+  			text-decoration: none;
+			}
+		}
+	}
+	
+}
