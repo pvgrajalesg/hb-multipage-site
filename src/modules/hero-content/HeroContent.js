@@ -6,7 +6,7 @@ import Breakpoint from '../../shared/breakpoint'
 export default class HeroContent {
   constructor (node) {
     this.node = node
-    const contentHero = Object.assign({}, heroContent, Breakpoint.dataHero())
+    const contentHero = Object.assign({}, heroContent, Breakpoint.dataBreakpoint())
     this.node.innerHTML = template(contentHero)
   }
 }
